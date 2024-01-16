@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storytelling Netflix Movies and TV Shows</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PRA: Base de datos COVID-19 de Google</h1>
+        Se va a realizar una representacion de los datos almacenados en  https://health.google.com/covid-19/open-data/raw-data, no es una única fuente de datos, sino 
+        se usaran distintos archivos para obtener los resultados
+        <p></p>
+        <img src="covid.jpg" alt="Distribución de la edad del contenido" style="width:100%; height:auto;">
+        <h2>Preguntas a responder</h2>
+        <p>Las preguntas que nos planteamos a responder son principalmente de dos bloques:</p>
+        <ul>
+            <li>Primer bloque: son las preguntas sobre lo ocurrido durante el periodo de enero a Julio de 2020 que es cuando empezó toda la pandemia. Las 
+                preguntas son las siguientes:
+            </li>
+            <ul>
+                <li>¿Cómo se fueron los contagios en las diversas regiones del mundo?</li>
+                <li>¿Hubieron tantos contagios y se fue desarrollando tan rápido en lso diversos países?</li>
+                <li>¿Qué tasa muerte contagio hubo por los meses de cuarentena en los diversos países?</li>
+                <li>¿Cúales fueron el número de muertes totales por región/país en este periodo?</li>
+            </ul>
+            <p></p>
+            <li>Segundo bloque: son preguntas sobre el post pandemia 2012 para adelante, donde se centrará en responder a las preguntas entorno a España(ES), Francia(FR),
+                Alemania(DE), Inglaterra (GB) e Italia(IT), debido al interés en nuestro país y los países con los que tenemos mayores relaciones. La preguntas son:
+                <ul>
+                    <li>¿Ayudaron las vacunas a bajar el número de contagios?</li>
+                    <li>¿Cuantos vacuandos hubo por país? Comparación entre ellos a rasgos totales</li>
+ 
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Bloque 1</h2>
+        <h3>¿Cómo se fueron los contagios en las diversas regiones del mundo?</h3>
+
+        Para responder a esta pregunta vamos a utilizar un barplot stackeando el número de contagios por mes en cada región de manera que se pueda observar el número
+        total de contagios, además de en que región. 
+        <div id="section-conteo">
+            <!-- Aquí se debe incluir el archivo conteo.html -->
+            <object type="text/html" data="conteo.html" width="102%" height="400px"></object>
+        </div>
+        Se observa que se empezó en Febrero en lo Región de Wester Pacific que es donde se encuentra China con 4 millones de contagios. Postriormente se observa que a partir de Abril
+        crece exponencialmente el número de contagios llegando a Julio a superar los 200 millones y concentradose principalmente en el contiente americano seguido por Europa.
+
+
+
+        <h3>¿Hubieron tantos contagios y se fue desarrollando tan rápido en lso diversos países?</h3>
+
+        Se va a utilizar un mapa interactivo donde se van a mostrar el número de contagios por país y mes donde es importante apreciar que la escala va ir cambiando.
+        <div id="section-mapa-year">
+            <!-- Aquí se debe incluir el archivo mapa_year.html -->
+            <object type="text/html" data="mapa_year.html" width="102%" height="500px"></object>
+        </div>
+        Se aprecia que como antes comentamos la epidemia empieza ne China y se desplaza en Marzo hacia al oeste de manera más o menos equitativa en Europa y el EE.UU.
+         A medida que pasan los meses se extiende hacia sur América, princpalmente ne Brasilm donde realiza un creicimiento exponencial junto con EE.UU, seguido de Rusia.
+    
+
+         <h3>¿Qué tasa muerte contagio hubo por los meses de cuarentena en los diversos países?</h3>
+       Se han observado los número totales de contagios por páises y regiones a lo largo de lso meses de pandemia mundial más fuertes, pero cada país tiene una población 
+       diferente por lo que para comprobar la tasa de muertos y que se vea si fue realmente grave la mortalidad de este virus se realiza un heatmap de muertos divididos entre 
+       contagiados mostrando así el porcentaje de personas que teniendo sintomatologías del virus murieron por países y meses.
+        <div id="section-contenidos">
+            <!-- Aquí se debe incluir el archivo contenidos.html -->
+            <object type="text/html" data="heatmap.html" width="104%" height="1000px"></object>
+        </div>
+        En el heatmap interactivo en el cual es posible hacer zoom para centrarse en los países de interés esta ordenado inversamente alfabetico. Se obsrva que durante Enero y Febrero
+        no hubo un tasa de fallecimiento alto en casi ningún país pero a partir de Marzo se observa que muchos países empiezan a oscilar entre un 5 y 20 porciento de fallecidos
+        por contagio incluso en algunos países del 35%, lo cual hablando antes de que llegamos a tener más de 200 millones de personas confirmadas contagidas se convierten números
+        peligrosamente altos, por lo que se puede llegar afirmar que la tasa de muerte fue de gran importancia a tener en cuenta cuando tratamos con este virus
+        
+        
+        <h3>¿Cúales fueron el número de muertes totales por región/país en este periodo?</h3>
+        Concluyendo este primer bloque de preguntas veamos las muertes totales por región y los 20 países con mayor mortalidad en números de este periodo, para ello
+        vamos a utilizar un gráfico pastel (pieplot) para ver que porcentajes y números se tuvieron
+
+        <div id="section-contenidos">
+            <!-- Aquí se debe incluir el archivo contenidos.html -->
+            <object type="text/html" data="pie.html" width="100%" height="800px"></object>
+        </div>
+            
+        Se por regiones las más afectadas fueron el continente americano y el europeo, debido a que los datos provienen de google y que el no hay tanta relación entre
+        occidente y Asia, además de que el contienente asiático tiene un población muy elevada se ve que hay cierto sesgo en los datos por lo que se tiene que tener cuidado
+        si se quieren sacar conclusiones con referencia a todos los continentes. Refiriendonos principalmente al continente europeo y americano se observa que el EE.UU fue donde
+        más fallecidos hubo tiene sentido debido a que tiene una población muy elevada, seguido por Inglaterra lo que si es preocupante ya que no tienen una población tan alta 
+        por lo que es preocupante, y encontramos a España en sexto lugar con más de 3 millones de fallecidos en total en este periodo conluyendo que fue una enfermedad muy agresiva
+        
+        <h2>Bloque 2</h2>
+        Para este bloque se han combianado diversos datasets de cada país (España(ES), Francia(FR),
+        Alemania(DE), Inglaterra (GB) e Italia(IT)) donde contienen el número total de vacuandos, confirmados y fallecidos. Además de estos mismos
+        datos por días desde 2021 hasta finales de 2022 y otros que han ayudad a responer a las preguntas y obtener los siguientes gráficos 
+        <h3>¿Ayudaron las vacunas a bajar el número de contagios?</h3>
+        Se responde a esta pregunta realizando una serie temporal por país, día vacunados/confirmados iteractiva donde se pueden ir ocultado los países de no interés.
+        <div id="section-contenidos">
+            <!-- Aquí se debe incluir el archivo contenidos.html -->
+            <object type="text/html" data="serie.html" width="100%" height="600px"></object>
+        </div>
+        Se observa que durante los periodos de vacución el número de confirmados de todos los países disminuyo, aunque también se observa que cerca de lso seis meses 
+        post-vacunación llego otro pico de confirmados mostrando también las limitaciones de las vacunas y la necesidad de continuar con dicha vacunación.
+
+        <h3>¿Cuantos vacuandos hubo por país? Comparación entre ellos a rasgos totales</h3>
+        Se va realizar dos gráficos Sandkey para visulizar en uno el número total por país y en otro los porcentajes debido a que existe un diferencia de la población total
+        de cada país.
+        <div id="section-contenidos">
+            <!-- Aquí se debe incluir el archivo contenidos.html -->
+            <object type="text/html" data="sankey.html" width="100%" height="600px"></object>
+        </div>  
+
+        Se observan estos países están entorno a una vacunación del 80 porciento de su población y siendo España la que encabeza esta lista con un 88% de la población vacunada,
+        aunque se aprecia que España sin encabezar el porcentaje de confirmados es la que tiene mayor tasa de muerte/ confirmados siendo 8.5 personas por cada 1000 confirmados lo que 
+        enseña que aún con la vacuna sigue siendo un virus altamente peligroso.
+
+
+      
+        <h2>Conclusión</h2>
+        Se concluye que el COVID-19 ha sido una enfermedad muy peligrosa con altos contagios durante el período de 2020-01 a 2020-07 llevandose a un gran número de personas con ella
+        alrededor de todo el globo terráqueo.También, se ha observado que en España y sus países vecinos en el periodo de 2021 a 2022 las vacunas fueron de gran ayuda para disminuir la cantidad de contagios, 
+        pero aún así sigo habiendo un número alto de contagios con una tasa de mortandad a tener en cuenta. Por último, se ha observado un sesgo en lso datos proveninetes del 
+        contienente asiático y australiano, lo cual puede tenerse en cuenta a la hora de mejorar estas visulizaciones en un futuro.
+         <p>
+
+        </p>
+        
+        <img src="covid.jpg" alt="Distribución de la edad del contenido" style="width:100%; height:auto;">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
